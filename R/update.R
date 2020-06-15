@@ -23,12 +23,12 @@ write_season <- function(y) {
     pull(game_id) %>%
     fast_scraper(pp = TRUE) %>%
     clean_pbp() %>%
-    fix_fumbles()
+    add_qb_epa()
   
   # get reg and post gamesfrom rds
   # pbp <- readRDS(glue::glue('data/play_by_play_{y}.rds')) %>%
   #   clean_pbp() %>%
-  #   fix_fumbles()
+  #   add_qb_epa()
   
   message(glue::glue('Year {y}: writing to file'))
   write_csv(pbp, glue::glue('data/play_by_play_{y}.csv.gz'))

@@ -3,6 +3,8 @@ NFL play-by-play data scraped from the [`nflfastR` package](https://github.com/m
 
 Data are stored in the data folder, available as either compressed csv (.csv.gz) or .rds.
 
+**Note that the data come from two separate sources and all player IDs are inconsistent across the old (1999 - 2010) and new (2011 onward) formats.**
+
 ___
 
 ### Load data using R
