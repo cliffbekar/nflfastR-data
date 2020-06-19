@@ -1553,23 +1553,25 @@ message("2009 through 2019")
 #> 2009 through 2019
 data %>% 
   filter(season >= 2009) %>%
-  select(wins, point_diff, off_pass_epa, off_rush_epa, prior_off_pass_epa, prior_off_rush_epa) %>%
+  select(wins, point_diff, off_pass_epa, off_rush_epa, prior_point_diff, prior_off_pass_epa, prior_off_rush_epa) %>%
   cor(use="complete.obs") %>%
   round(2)
-#>                    wins point_diff off_pass_epa off_rush_epa prior_off_pass_epa
-#> wins               1.00       0.91         0.72         0.42               0.34
-#> point_diff         0.91       1.00         0.79         0.48               0.36
-#> off_pass_epa       0.72       0.79         1.00         0.39               0.46
-#> off_rush_epa       0.42       0.48         0.39         1.00               0.11
-#> prior_off_pass_epa 0.34       0.36         0.46         0.11               1.00
-#> prior_off_rush_epa 0.25       0.25         0.16         0.24               0.37
-#>                    prior_off_rush_epa
-#> wins                             0.25
-#> point_diff                       0.25
-#> off_pass_epa                     0.16
-#> off_rush_epa                     0.24
-#> prior_off_pass_epa               0.37
-#> prior_off_rush_epa               1.00
+#>                    wins point_diff off_pass_epa off_rush_epa prior_point_diff
+#> wins               1.00       0.91         0.72         0.42             0.43
+#> point_diff         0.91       1.00         0.79         0.48             0.44
+#> off_pass_epa       0.72       0.79         1.00         0.39             0.39
+#> off_rush_epa       0.42       0.48         0.39         1.00             0.19
+#> prior_point_diff   0.43       0.44         0.39         0.19             1.00
+#> prior_off_pass_epa 0.34       0.36         0.46         0.11             0.78
+#> prior_off_rush_epa 0.25       0.25         0.16         0.24             0.47
+#>                    prior_off_pass_epa prior_off_rush_epa
+#> wins                             0.34               0.25
+#> point_diff                       0.36               0.25
+#> off_pass_epa                     0.46               0.16
+#> off_rush_epa                     0.11               0.24
+#> prior_point_diff                 0.78               0.47
+#> prior_off_pass_epa               1.00               0.37
+#> prior_off_rush_epa               0.37               1.00
 ```
 
 ``` r
@@ -1577,23 +1579,25 @@ message("1999 through 2008")
 #> 1999 through 2008
 data %>% 
   filter(season < 2009) %>%
-  select(wins, point_diff, off_pass_epa, off_rush_epa, prior_off_pass_epa, prior_off_rush_epa) %>%
+  select(wins, point_diff, off_pass_epa, off_rush_epa, prior_point_diff, prior_off_pass_epa, prior_off_rush_epa) %>%
   cor(use="complete.obs") %>%
   round(2)
-#>                    wins point_diff off_pass_epa off_rush_epa prior_off_pass_epa
-#> wins               1.00       0.92         0.67         0.48               0.22
-#> point_diff         0.92       1.00         0.72         0.52               0.28
-#> off_pass_epa       0.67       0.72         1.00         0.49               0.45
-#> off_rush_epa       0.48       0.52         0.49         1.00               0.31
-#> prior_off_pass_epa 0.22       0.28         0.45         0.31               1.00
-#> prior_off_rush_epa 0.23       0.29         0.30         0.43               0.49
-#>                    prior_off_rush_epa
-#> wins                             0.23
-#> point_diff                       0.29
-#> off_pass_epa                     0.30
-#> off_rush_epa                     0.43
-#> prior_off_pass_epa               0.49
-#> prior_off_rush_epa               1.00
+#>                    wins point_diff off_pass_epa off_rush_epa prior_point_diff
+#> wins               1.00       0.92         0.67         0.48             0.28
+#> point_diff         0.92       1.00         0.72         0.52             0.36
+#> off_pass_epa       0.67       0.72         1.00         0.49             0.34
+#> off_rush_epa       0.48       0.52         0.49         1.00             0.27
+#> prior_point_diff   0.28       0.36         0.34         0.27             1.00
+#> prior_off_pass_epa 0.22       0.28         0.45         0.31             0.74
+#> prior_off_rush_epa 0.23       0.29         0.30         0.43             0.51
+#>                    prior_off_pass_epa prior_off_rush_epa
+#> wins                             0.22               0.23
+#> point_diff                       0.28               0.29
+#> off_pass_epa                     0.45               0.30
+#> off_rush_epa                     0.31               0.43
+#> prior_point_diff                 0.74               0.51
+#> prior_off_pass_epa               1.00               0.49
+#> prior_off_rush_epa               0.49               1.00
 ```
 
 Yep, that seems to be the case. So in the more recent period, passing

@@ -640,7 +640,7 @@ I'm actually surprised that the values for passing offense aren't higher relativ
 message("2009 through 2019")
 data %>% 
   filter(season >= 2009) %>%
-  select(wins, point_diff, off_pass_epa, off_rush_epa, prior_off_pass_epa, prior_off_rush_epa) %>%
+  select(wins, point_diff, off_pass_epa, off_rush_epa, prior_point_diff, prior_off_pass_epa, prior_off_rush_epa) %>%
   cor(use="complete.obs") %>%
   round(2)
 ```
@@ -649,7 +649,7 @@ data %>%
 message("1999 through 2008")
 data %>% 
   filter(season < 2009) %>%
-  select(wins, point_diff, off_pass_epa, off_rush_epa, prior_off_pass_epa, prior_off_rush_epa) %>%
+  select(wins, point_diff, off_pass_epa, off_rush_epa, prior_point_diff, prior_off_pass_epa, prior_off_rush_epa) %>%
   cor(use="complete.obs") %>%
   round(2)
 ```
